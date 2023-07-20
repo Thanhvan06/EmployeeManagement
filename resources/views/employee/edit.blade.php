@@ -2,7 +2,7 @@
 @section('content')
 <main class="container">
     <section>
-        <form method="POST" action="{{route('employee.update', $employee->id )}}">
+        <form method="POST" action="{{route('employee.update', $employee->ID )}}">
         @csrf
         @method('PUT')
         <div class="titlebar">
@@ -30,12 +30,11 @@
             </div>
             </div>
         </div>
-            <input type="hidden" name="hidden_id" value="{{$employee->id}}">
+            <input type="hidden" name="hidden_id" value="{{$employee->ID}}">
             <button>Return</button>
             <button>Save</button>
         </div>
     </form>
     </section>
-    <section>
 </main>
 @endsection

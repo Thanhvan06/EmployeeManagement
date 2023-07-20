@@ -18,5 +18,4 @@ use App\Http\Controllers\EmployeeController;
 //     return view('welcome');
 // });
 
-Route::get('/employee/{id}', [EmployeeController::class, 'details'])->name('employee.details');
 Route::resource('employee', EmployeeController::class);

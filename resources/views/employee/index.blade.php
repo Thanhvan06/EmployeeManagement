@@ -26,18 +26,17 @@
                 </div>
                 <div class="table-product-body">
                     @foreach ($employees as $employee)
-                        <p><a href="{{ route('employee.details', $employee['id']) }}">{{ $employee['id'] }}</a></p>
-                        <p>{{ $employee->id }}</p>
+                        <p><a href="{{ route('employee.show', $employee->ID) }}">{{ $employee['ID'] }}</a></p>
                         <p>{{ $employee->num }}</p>
                         <p>{{ $employee->name }}</p>
                         <p>{{ $employee->department }}</p>
                         <p>{{ $employee->gender }}</p>
                         <div>
-                            <a href=" {{ route('employee.edit', $employee->id) }}" class="btn btn-success">
+                            <a href=" {{ route('employee.edit', $employee->ID) }}" class="btn btn-success">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
-                            <form method="POST" action="{{ route('employee.destroy', $employee->id) }}">
-                                @method('detete')
+                            <form method="POST" action="{{ route('employee.destroy', $employee->ID) }}">
+                                @method('delete')
                                 @csrf
                                 <button class="btn btn-danger" onclick="deleteConfirm(event)">
                                     <i class="far fa-trash-alt"></i>
@@ -68,7 +67,7 @@
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: #00000,
-                cancelButtonCOlor: # fff,
+                    cancelButtonCOlor: # fff,
                 confirmButtonText: 'Yes'
             }).then((result) => {
                 if (result.isConfirmed) {

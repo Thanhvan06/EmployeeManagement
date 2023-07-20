@@ -7,23 +7,23 @@
                 <table class="table table-bordered">
                     <tr>
                         <th>ID</th>
-                        <th>{{ $employee->id }}</th>
+                         <th>{{ $employee ? $employee->ID : '' }}</th>
                     </tr>
                     <tr>
                         <th>Quantity</th>
-                        <th>{{ $employee->num }}</th>
+                        <th>{{ $employee ? $employee->num : '' }}</th>
                     </tr>
                     <tr>
                         <th>Name</th>
-                        <th>{{ $employee->name }}</th>
+                        <th>{{ $employee ? $employee->name : '' }}</th>
                     </tr>
                     <tr>
                         <th>Department</th>
-                        <th>{{ $employee->department }}</th>
+                        <th>{{ $employee ? $employee->department : '' }}</th>
                     </tr>
                     <tr>
                         <th>Gender</th>
-                        <th>{{ $employee->gender }}</th>
+                        <th>{{ $employee ? $employee->gender : '' }}</th>
                     </tr>
                 </table>
                 <a href="{{ route('employee.index') }}">Return</a>
